@@ -1,244 +1,262 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sithole Licane - Portfolio</title>
+    <meta name="description" content="Portfolio of Sithole Licane, a frontend, web, and app developer building responsive websites, PHP/MySQL systems, and Android applications.">
+    <meta name="keywords" content="Sithole Licane, portfolio, frontend developer, web developer, app developer, PHP, MySQL, JavaScript, Android">
+    <meta name="author" content="Sithole Licane">
+    <meta property="og:title" content="Sithole Licane - Developer Portfolio">
+    <meta property="og:description" content="Responsive websites, clean UI design, PHP/MySQL systems, and Android app development.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="Profile1.jpeg">
+    <title>Sithole Licane - Developer Portfolio</title>
+    <link rel="preconnect" href="https://unpkg.com">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header class="header">
-        <a href="#home" class="logo">Sithole <span>Licane</span></a>
-        <i class="bx bx-menu" id="menu-icon"></i>
+        <a href="#home" class="logo" aria-label="Sithole Licane home">Sithole <span>Licane</span></a>
+        <button class="menu-toggle" id="menu-icon" type="button" aria-label="Open navigation" aria-expanded="false">
+            <i class="bx bx-menu" aria-hidden="true"></i>
+        </button>
 
-        <nav class="navbar">
+        <nav class="navbar" aria-label="Primary navigation">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
             <a href="#services">Services</a>
-            <a href="#testimonial">Testimonial</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <section class="home" id="home">
-        <div class="home-img">
-            <img src="lee.jpeg" alt="Sithole Licane profile photo" onerror="this.style.display='none'">
-        </div>
-
-        <div class="home-content">
-            <h3>Hello, Myself</h3>
-            <h1>Sithole Licane</h1>
-            <h3>And I'm a <span class="multiple-text"></span></h3>
-            <p>I am a passionate developer dedicated to creating sleek, functional, and user-friendly web experiences. With a focus on modern design and clean code, I bring digital visions to life.</p>
-
-            <div class="social-media">
-                <a href="https://www.linkedin.com/in/licane-sithole" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
-                <a href="https://t.me/lemmarlyn" aria-label="Telegram"><i class="bx bxl-telegram"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=100095799840629" aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="https://www.instagram.com/lemmarlyn" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="https://wa.me/263774661776" aria-label="WhatsApp"><i class="bx bxl-whatsapp"></i></a>
+    <main>
+        <section class="home" id="home">
+            <div class="home-img">
+                <img src="lee.jpeg" alt="Portrait of Sithole Licane" loading="eager">
             </div>
 
-            <a href="#" class="btn">Download CV</a>
-        </div>
-    </section>
+            <div class="home-content">
+                <p class="eyebrow">Frontend Developer | Web Designer | App Developer</p>
+                <h1>Sithole Licane</h1>
+                <h2>I build <span class="multiple-text">responsive digital experiences</span></h2>
+                <p>
+                    I create clean, responsive, and user-friendly digital products using HTML, CSS, JavaScript,
+                    PHP/MySQL, Java, Android Studio, and SQLite. My focus is simple: useful systems, readable code,
+                    and interfaces that work well on every screen.
+                </p>
 
-    <section class="about" id="about">
-        <div class="about-container">
-
-    <div class="about-content">
-        <h2>About <span>Me</span></h2>
-        <h3>I'm a <span>Frontend Developer</span></h3>
-        
-        <p>
-            I enjoy building clean, responsive websites that are simple to use and pleasant to look at. 
-            My goal is to keep improving my skills while helping people bring their ideas online.
-            
-            <span id="more-about" style="display: none;">
-                <br><br>
-                Currently pursuing my software development studies, I specialize in crafting interactive user interfaces with modern HTML, CSS layouts, and dynamic JavaScript logic. I'm also expanding my technical stack into full-stack architecture with PHP/MySQL and native mobile application engineering.
-            </span>
-        </p>
-
-        <button id="btn-about" class="btn" onclick="toggleDetails('more-about', 'btn-about')">Read More</button>
-    </div>
-</div>
-
-<script>
-function toggleDetails(textId, buttonId) {
-    var extraText = document.getElementById(textId);
-    var clickedButton = document.getElementById(buttonId);
-
-    if (extraText.style.display === "none") {
-        extraText.style.display = "inline";     // Expands and shows info
-        clickedButton.innerHTML = "Read Less";    // Updates button text
-    } else {
-        extraText.style.display = "none";       // Collapses and hides info
-        clickedButton.innerHTML = "Read More";    // Resets button text
-    }
-}
-</script>
-
-        <div class="about-img">
-            <img src="Profile1.jpeg" alt="About Sithole Licane" onerror="this.style.display='none'">
-        </div>
-    </section>
-
-    <section class="services" id="services">
-        <h2 class="heading">My <span>Services</span></h2>
-
-        <div class="services-container">
-           <div class="services-box">
-    <i class="bx bx-code-alt"></i> <h3>Web Development</h3>
-    <p>
-        Building responsive, modern websites using HTML, CSS, and JavaScript.
-        
-        <span id="more-webdev" style="display: none;">
-            <br><br>
-            Creating production-ready web applications with clean architecture. Experienced in full-stack integration using PHP and MySQL database structures, front-end animations, semantic layouts, and optimizing platforms for speed across desktop and mobile devices.
-        </span>
-    </p>
-    <button id="btn-webdev" class="btn" onclick="toggleDetails('more-webdev', 'btn-webdev')">Read More</button>
-</div>
-
-<div class="services-box">
-    <i class="bx bx-palette"></i> <h3>UI/UX Design</h3>
-    <p>
-        Designing clean interfaces that are easy to understand and enjoyable to use.
-        
-        <span id="more-uiux" style="display: none;">
-            <br><br>
-            Focusing on user-centered design principles, wireframing, and building high-fidelity interactive prototypes. Specializing in visual hierarchy, accessibility standards, uniform color schemas, and translating complex user logic into clean, minimal user flows.
-        </span>
-    </p>
-    <button id="btn-uiux" class="btn" onclick="toggleDetails('more-uiux', 'btn-uiux')">Read More</button>
-</div>
-
-<script>
-function toggleDetails(textId, buttonId) {
-    // 1. Target the specific elements passed by the button click
-    var extraText = document.getElementById(textId);
-    var clickedButton = document.getElementById(buttonId);
-
-    // 2. Check visibility state and toggle accordingly
-    if (extraText.style.display === "none") {
-        extraText.style.display = "inline";     // Show info
-        clickedButton.innerHTML = "Read Less";    // Change button text
-    } else {
-        extraText.style.display = "none";       // Hide info
-        clickedButton.innerHTML = "Read More";    // Reset button text
-    }
-}
-</script>
-
-           <div class="services-box">
-    <i class="bx bxl-android"></i>
-    <h3>App Development</h3>
-    
-    <p>
-        Creating simple app experiences with a focus on usability and performance.
-        
-        <span id="more-info" style="display: none;">
-            <br><br>
-            Specializing in building robust mobile applications using Java, Android Studio, and SQLite databases. Fully experienced in managing component lifecycles, optimizing background services, implementing responsive XML layouts, and handling local data storage effectively.
-        </span>
-    </p>
-    
-    <button id="read-more-btn" class="btn" onclick="toggleServiceDetails()">Read More</button>
-</div>
-
-<script>
-function toggleServiceDetails() {
-    var additionalText = document.getElementById("more-info");
-    var buttonElement = document.getElementById("read-more-btn");
-
-    if (additionalText.style.display === "none") {
-        additionalText.style.display = "inline"; // Reveals the text
-        buttonElement.innerHTML = "Read Less";    // Updates button text
-    } else {
-        additionalText.style.display = "none";   // Hides the text
-        buttonElement.innerHTML = "Read More";   // Resets button text
-    }
-}
-</script>
-        </div>
-    </section>
-
-    <section class="testimonial" id="testimonial">
-        <div class="testimonial-box">
-            <h2 class="heading">Testimonials</h2>
-
-            <div class="wrapper">
-                <div class="testimonial-item">
-                    <img src="extro.jpg" alt="Extrovertsir" onerror="this.style.display='none'">
-                    <h2>Extrovertsir</h2>
-                    <div class="rating" aria-label="5 star rating">
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                    </div>
-                    <p>An exceptional frontend talent. He didn't just translate our UI mockups into code; he optimized the entire script architecture for performance. Clean structure and a true team player.</p>
+                <div class="hero-actions">
+                    <a href="Sithole Licane. CV.pdf" class="btn" download>Download CV</a>
+                    <a href="#projects" class="btn btn-secondary">View Projects</a>
                 </div>
 
-                <div class="testimonial-item">
-                    <img src="person.jpeg" alt="Person" onerror="this.style.display='none'">
-                    <h2>Person</h2>
-                    <div class="rating" aria-label="5 star rating">
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                    </div>
-                    <p>He brought our dashboard designs to life flawlessly. The responsiveness across mobile platforms was pixel-perfect, and his attention to detail kept our user experience seamless.</p>
-                </div>
-
-                <div class="testimonial-item">
-                    <img src="jack.jpeg" alt="Mathematician" onerror="this.style.display='none'">
-                    <h2>Mathematician</h2>
-                    <div class="rating" aria-label="5 star rating">
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                    </div>
-                    <p>His mastery over responsive CSS logic and modular JavaScript structure is impressive. He solved complex interface challenges efficiently and delivered a clean, highly maintainable codebase.</p>
+                <div class="social-media" aria-label="Social links">
+                    <a href="https://www.linkedin.com/in/licane-sithole" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://github.com/sitholelicane" target="_blank" rel="noopener" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+                    <a href="https://t.me/lemmarlyn" target="_blank" rel="noopener" aria-label="Telegram"><i class="bx bxl-telegram"></i></a>
+                    <a href="https://wa.me/263774661776" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bx bxl-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/lemmarlyn" target="_blank" rel="noopener" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me</span></h2>
+        <section class="about" id="about">
+            <div class="about-content">
+                <h2 class="heading">About <span>Me</span></h2>
+                <h3>Developer focused on practical, polished software</h3>
+                <p>
+                    I am a software development student and junior developer who enjoys turning ideas into working
+                    websites, mobile apps, and database-driven systems. I care about strong structure, clear user
+                    journeys, performance, and designs that are easy to understand.
+                </p>
+                <p class="collapsible" id="more-about" hidden>
+                    My current work includes responsive portfolio websites, student management systems, Android fitness
+                    applications, form handling, database design, and interface improvements. I am continuously improving
+                    my frontend skills while expanding into backend development and mobile engineering.
+                </p>
+                <button class="btn btn-secondary read-more" type="button" data-target="more-about">Read More</button>
 
-    <form action="https://formspree.io/f/xaqkwekq" method="POST">
-    
-    <input type="text" name="name" placeholder="Full Name" required>
-    <input type="email" name="email" placeholder="Email from" required>
-    <input type="text" name="phone" placeholder="Phone Number">
-    <input type="text" name="subject" placeholder="Email to">
-    
-    <textarea name="message" placeholder="Your Message" required></textarea>
+                <div class="stats" aria-label="Portfolio highlights">
+                    <div>
+                        <strong>3+</strong>
+                        <span>Project Areas</span>
+                    </div>
+                    <div>
+                        <strong>7</strong>
+                        <span>Core Technologies</span>
+                    </div>
+                    <div>
+                        <strong>100%</strong>
+                        <span>Responsive Focus</span>
+                    </div>
+                </div>
+            </div>
 
-    <button type="submit">Send Message</button>
-</form>
-    </section>
+            <div class="about-img">
+                <img src="Profile1.jpeg" alt="Sithole Licane profile image" loading="lazy">
+            </div>
+        </section>
+
+        <section class="services" id="services">
+            <h2 class="heading">My <span>Services</span></h2>
+
+            <div class="services-container">
+                <article class="services-box">
+                    <i class="bx bx-code-alt" aria-hidden="true"></i>
+                    <h3>Web Development</h3>
+                    <p>
+                        Responsive websites and web applications built with semantic HTML, modern CSS, JavaScript,
+                        PHP, and MySQL.
+                    </p>
+                    <ul class="service-list">
+                        <li>Portfolio and business websites</li>
+                        <li>Database-connected systems</li>
+                        <li>Mobile-first page layouts</li>
+                    </ul>
+                </article>
+
+                <article class="services-box">
+                    <i class="bx bx-palette" aria-hidden="true"></i>
+                    <h3>UI/UX Design</h3>
+                    <p>
+                        Clean interface design with readable layouts, consistent spacing, accessible contrast, and clear
+                        calls to action.
+                    </p>
+                    <ul class="service-list">
+                        <li>Wireframes and prototypes</li>
+                        <li>Visual hierarchy improvements</li>
+                        <li>Usability-focused redesigns</li>
+                    </ul>
+                </article>
+
+                <article class="services-box">
+                    <i class="bx bxl-android" aria-hidden="true"></i>
+                    <h3>App Development</h3>
+                    <p>
+                        Android applications that support simple workflows, local data storage, responsive screens, and
+                        practical user features.
+                    </p>
+                    <ul class="service-list">
+                        <li>Java and Android Studio</li>
+                        <li>SQLite local databases</li>
+                        <li>XML interface layouts</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="skills" id="skills">
+            <h2 class="heading">Technical <span>Skills</span></h2>
+            <div class="skills-grid">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>PHP</span>
+                <span>MySQL</span>
+                <span>Java</span>
+                <span>Android Studio</span>
+                <span>SQLite</span>
+                <span>Responsive Design</span>
+            </div>
+        </section>
+
+        <section class="projects" id="projects">
+            <div class="projects-box">
+                <h2 class="heading">My <span>Projects</span></h2>
+
+                <div class="wrapper">
+                    <article class="projects-item">
+                        <div class="project-icon"><i class="bx bx-dumbbell" aria-hidden="true"></i></div>
+                        <h3>Fitness Tracking App</h3>
+                        <p>
+                            Android fitness app for logging workouts, tracking exercise history, and monitoring progress.
+                            Built with Java, XML layouts, and SQLite for local storage.
+                        </p>
+                        <div class="tech-stack">
+                            <span>Java</span>
+                            <span>SQLite</span>
+                            <span>Android</span>
+                        </div>
+                        <a href="https://github.com/sitholelicane" target="_blank" rel="noopener" class="btn">View Source</a>
+                    </article>
+
+                    <article class="projects-item">
+                        <div class="project-icon"><i class="bx bx-layout" aria-hidden="true"></i></div>
+                        <h3>Portfolio Website</h3>
+                        <p>
+                            Responsive portfolio site with polished sections for skills, services, projects, CV download,
+                            social links, and a working contact form.
+                        </p>
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="#home" class="btn">View Project</a>
+                    </article>
+
+                    <article class="projects-item">
+                        <div class="project-icon"><i class="bx bx-data" aria-hidden="true"></i></div>
+                        <h3>Student Management System</h3>
+                        <p>
+                            Web-based system for managing student records, registrations, attendance, and academic data
+                            using PHP, MySQL, HTML, CSS, and JavaScript.
+                        </p>
+                        <div class="tech-stack">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="https://github.com/sitholelicane" target="_blank" rel="noopener" class="btn">View Source</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2 class="heading">Contact <span>Me</span></h2>
+
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <h3>Let us build something useful</h3>
+                    <p>
+                        Send a message for website work, app development, UI improvements, or collaboration. I will reply
+                        as soon as possible.
+                    </p>
+                    <a href="mailto:sitholelicane0@gmail.com">sitholelicane0@gmail.com</a>
+                    <a href="tel:+263774661776">+263 774 661 776</a>
+                </div>
+
+                <form action="https://formspree.io/f/xaqkwekq" method="POST">
+                    <div class="input-box">
+                        <input type="text" name="name" placeholder="Full Name" autocomplete="name" required>
+                        <input type="email" name="email" placeholder="Email Address" autocomplete="email" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="tel" name="phone" placeholder="Phone Number" autocomplete="tel">
+                        <input type="text" name="subject" placeholder="Subject" required>
+                    </div>
+                    <textarea name="message" rows="7" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
-        <div class="social">
-            <a href="https://www.linkedin.com/in/licane-sithole" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
-            <a href="https://wa.me/263774661776" aria-label="WhatsApp"><i class="bx bxl-whatsapp"></i></a>
-             <a href="https://github.com/sitholelicane" aria-label="Github"><i class="bx bxl-github"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=100095799840629" aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
-            <a href="https://www.instagram.com/lemmarlyn" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
+        <div class="social" aria-label="Footer social links">
+            <a href="https://www.linkedin.com/in/licane-sithole" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+            <a href="https://github.com/sitholelicane" target="_blank" rel="noopener" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+            <a href="https://wa.me/263774661776" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bx bxl-whatsapp"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100095799840629" target="_blank" rel="noopener" aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
+            <a href="https://www.instagram.com/lemmarlyn" target="_blank" rel="noopener" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
         </div>
-        <p class="copyright">&copy; Sithole Licane - All Rights Reserved</p>
+        <p class="copyright">&copy; <span id="year"></span> Sithole Licane. All Rights Reserved.</p>
     </footer>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
@@ -246,3 +264,6 @@ function toggleServiceDetails() {
 </body>
 
 </html>
+
+
+

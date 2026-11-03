@@ -1,4 +1,4 @@
-* {
+﻿* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -10,13 +10,14 @@
 }
 
 :root {
-    --bg-color: #111827;
-    --second-bg-color: #172033;
+    --bg-color: #101820;
+    --second-bg-color: #182635;
+    --panel-color: #223246;
     --text-color: #f8fafc;
-    --main-color: #38bdf8;
+    --main-color: #2dd4bf;
     --accent-color: #f59e0b;
     --muted-color: #cbd5e1;
-    --card-color: #1f2937;
+    --line-color: rgba(255, 255, 255, 0.1);
 }
 
 html {
@@ -29,6 +30,10 @@ body {
     color: var(--text-color);
 }
 
+main {
+    overflow: hidden;
+}
+
 section {
     min-height: 100vh;
     padding: 10rem 9% 5rem;
@@ -36,11 +41,12 @@ section {
 
 .header {
     align-items: center;
-    background: rgba(17, 24, 39, 0.94);
+    background: rgba(16, 24, 32, 0.95);
+    border-bottom: 0.1rem solid var(--line-color);
     display: flex;
     justify-content: space-between;
     left: 0;
-    padding: 2rem 9%;
+    padding: 1.8rem 9%;
     position: fixed;
     top: 0;
     width: 100%;
@@ -59,11 +65,16 @@ span,
     color: var(--main-color);
 }
 
+.navbar {
+    align-items: center;
+    display: flex;
+    gap: 3rem;
+}
+
 .navbar a {
     color: var(--text-color);
-    font-size: 1.7rem;
-    font-weight: 600;
-    margin-left: 3.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
     transition: 0.3s ease;
 }
 
@@ -72,14 +83,17 @@ span,
     color: var(--main-color);
 }
 
-#menu-icon {
+.menu-toggle {
+    background: transparent;
     color: var(--text-color);
     cursor: pointer;
     display: none;
     font-size: 3.6rem;
 }
 
-.home {
+.home,
+.about,
+.contact-layout {
     align-items: center;
     display: flex;
     gap: 6rem;
@@ -97,51 +111,69 @@ span,
     justify-content: center;
     max-width: 34rem;
     overflow: hidden;
+    padding: 0.4rem;
 }
 
 .home-img img,
-.about-img img,
-.testimonial-item img {
+.about-img img {
+    border-radius: 50%;
     height: 100%;
     object-fit: cover;
     width: 100%;
 }
 
-.home-img img[src],
-.about-img img[src],
-.testimonial-item img[src] {
-    background: var(--card-color);
+.home-content,
+.about-content,
+.contact-info {
+    max-width: 70rem;
 }
 
-.home-content {
-    max-width: 68rem;
-}
-
-.home-content h3 {
-    font-size: 3.2rem;
+.eyebrow {
+    color: var(--accent-color);
+    font-size: 1.5rem;
     font-weight: 700;
+    letter-spacing: 0;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
 }
 
 .home-content h1 {
-    font-size: 5.6rem;
+    font-size: 5.8rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.home-content h2 {
+    font-size: 3rem;
     font-weight: 700;
-    line-height: 1.15;
+    line-height: 1.35;
+    margin-bottom: 2rem;
 }
 
 .home-content p,
 .about-content p,
 .services-box p,
-.testimonial-item p {
+.projects-item p,
+.contact-info p {
     color: var(--muted-color);
     font-size: 1.7rem;
     line-height: 1.7;
 }
 
-.social-media {
+.hero-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 1.4rem;
-    margin: 3rem 0;
+    margin: 3rem 0 0;
+}
+
+.social-media,
+.social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    margin-top: 3rem;
 }
 
 .social-media a,
@@ -167,47 +199,53 @@ span,
 
 .btn {
     background: var(--main-color);
+    border: 0.2rem solid var(--main-color);
     border-radius: 0.8rem;
-    box-shadow: 0 0 1rem rgba(56, 189, 248, 0.35);
+    box-shadow: 0 0 1rem rgba(45, 212, 191, 0.28);
     color: #06111f;
+    cursor: pointer;
     display: inline-block;
     font-size: 1.6rem;
-    font-weight: 700;
-    letter-spacing: 0;
+    font-weight: 800;
     padding: 1.2rem 2.8rem;
     transition: 0.3s ease;
 }
 
 .btn:hover {
     background: var(--accent-color);
-    box-shadow: 0 0 1.5rem rgba(245, 158, 11, 0.38);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 1.5rem rgba(245, 158, 11, 0.35);
     transform: translateY(-0.2rem);
 }
 
-.about {
-    align-items: center;
+.btn-secondary {
+    background: transparent;
+    color: var(--main-color);
+}
+
+.btn-secondary:hover {
+    color: #06111f;
+}
+
+.about,
+.projects,
+.contact {
     background: var(--second-bg-color);
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 6rem;
-    justify-content: center;
 }
 
 .heading {
     font-size: 4.5rem;
+    line-height: 1.2;
     margin-bottom: 3rem;
     text-align: center;
-}
-
-.about-content {
-    max-width: 68rem;
 }
 
 .about-content .heading {
     text-align: left;
 }
 
-.about-content h3 {
+.about-content h3,
+.contact-info h3 {
     font-size: 2.6rem;
     margin-bottom: 1.5rem;
 }
@@ -216,86 +254,157 @@ span,
     margin-top: 2.5rem;
 }
 
-.services-container {
+.stats {
     display: grid;
-    gap: 2.4rem;
+    gap: 1.4rem;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 3rem;
 }
 
-.services-box,
-.testimonial-item {
-    background: var(--card-color);
-    border: 0.1rem solid rgba(255, 255, 255, 0.08);
+.stats div {
+    background: var(--panel-color);
+    border: 0.1rem solid var(--line-color);
     border-radius: 0.8rem;
-    padding: 3rem 2.4rem;
-    text-align: center;
-    transition: 0.3s ease;
+    padding: 1.8rem;
 }
 
-.services-box:hover,
-.testimonial-item:hover {
-    border-color: var(--main-color);
-    transform: translateY(-0.6rem);
+.stats strong {
+    color: var(--accent-color);
+    display: block;
+    font-size: 2.8rem;
 }
 
-.services-box i {
-    color: var(--main-color);
-    font-size: 5rem;
+.stats span {
+    color: var(--muted-color);
+    display: block;
+    font-size: 1.4rem;
+    margin-top: 0.4rem;
 }
 
-.services-box h3 {
-    font-size: 2.4rem;
-    margin: 1.5rem 0 1rem;
-}
-
-.services-box .btn {
-    margin-top: 2rem;
-}
-
-.testimonial {
-    background: var(--second-bg-color);
-}
-
+.services-container,
 .wrapper {
     display: grid;
     gap: 2.4rem;
     grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.testimonial-item img {
-    border: 0.3rem solid var(--main-color);
-    border-radius: 50%;
-    height: 12rem;
-    margin-bottom: 1.5rem;
-    width: 12rem;
+.services-box,
+.projects-item {
+    background: var(--panel-color);
+    border: 0.1rem solid var(--line-color);
+    border-radius: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 3rem 2.4rem;
+    transition: 0.3s ease;
 }
 
-.testimonial-item h2 {
-    font-size: 2.2rem;
+.services-box:hover,
+.projects-item:hover {
+    border-color: var(--main-color);
+    transform: translateY(-0.6rem);
 }
 
-.rating {
-    color: var(--accent-color);
-    font-size: 2rem;
-    margin: 1rem 0;
+.services-box i,
+.project-icon i {
+    color: var(--main-color);
+    font-size: 5rem;
 }
 
+.services-box h3,
+.projects-item h3 {
+    font-size: 2.4rem;
+    margin: 1.5rem 0 1rem;
+}
+
+.service-list {
+    color: var(--muted-color);
+    font-size: 1.55rem;
+    line-height: 1.7;
+    list-style-position: inside;
+    margin-top: 1.6rem;
+}
+
+.skills {
+    min-height: auto;
+}
+
+.skills-grid,
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+}
+
+.skills-grid span,
+.tech-stack span {
+    background: var(--panel-color);
+    border: 0.1rem solid var(--line-color);
+    border-radius: 999rem;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1rem 1.6rem;
+}
+
+.projects-item {
+    text-align: left;
+}
+
+.project-icon {
+    align-items: center;
+    background: rgba(45, 212, 191, 0.08);
+    border-radius: 0.8rem;
+    display: flex;
+    height: 8rem;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    width: 8rem;
+}
+
+.projects-item p {
+    flex: 1;
+}
+
+.tech-stack {
+    justify-content: flex-start;
+    margin: 2rem 0;
+}
+
+.tech-stack span {
+    background: rgba(255, 255, 255, 0.06);
+    font-size: 1.3rem;
+    padding: 0.8rem 1.2rem;
+}
+
+.contact-layout {
+    align-items: flex-start;
+}
+
+.contact-info,
 .contact form {
-    margin: 0 auto;
-    max-width: 78rem;
-    text-align: center;
+    flex: 1 1 0;
+}
+
+.contact-info a {
+    color: var(--main-color);
+    display: block;
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
 }
 
 .input-box {
     display: flex;
     gap: 1.6rem;
-    justify-content: space-between;
 }
 
 .contact form input,
 .contact form textarea {
-    background: var(--second-bg-color);
-    border: 0.1rem solid rgba(255, 255, 255, 0.08);
+    background: var(--bg-color);
+    border: 0.1rem solid var(--line-color);
     border-radius: 0.8rem;
     color: var(--text-color);
     font-size: 1.6rem;
@@ -304,13 +413,20 @@ span,
     width: 100%;
 }
 
+.contact form input:focus,
+.contact form textarea:focus {
+    border-color: var(--main-color);
+}
+
 .contact form textarea {
-    resize: none;
+    min-height: 18rem;
+    resize: vertical;
 }
 
 .footer {
     align-items: center;
-    background: var(--second-bg-color);
+    background: var(--bg-color);
+    border-top: 0.1rem solid var(--line-color);
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
@@ -318,9 +434,8 @@ span,
     text-align: center;
 }
 
-.social {
-    display: flex;
-    gap: 1.4rem;
+.footer .social {
+    margin-top: 0;
 }
 
 .copyright {
@@ -330,7 +445,7 @@ span,
 
 @media (max-width: 991px) {
     .header {
-        padding: 2rem 4%;
+        padding: 1.8rem 4%;
     }
 
     section {
@@ -338,19 +453,25 @@ span,
     }
 
     .home,
-    .about {
+    .about,
+    .contact-layout {
         gap: 4rem;
+    }
+
+    .services-container,
+    .wrapper {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 @media (max-width: 768px) {
-    #menu-icon {
-        display: block;
+    .menu-toggle {
+        display: inline-flex;
     }
 
     .navbar {
         background: var(--second-bg-color);
-        border-top: 0.1rem solid rgba(255, 255, 255, 0.08);
+        border-top: 0.1rem solid var(--line-color);
         display: none;
         left: 0;
         padding: 1rem 4%;
@@ -369,7 +490,8 @@ span,
     }
 
     .home,
-    .about {
+    .about,
+    .contact-layout {
         flex-direction: column;
         text-align: center;
     }
@@ -388,17 +510,30 @@ span,
         font-size: 4.2rem;
     }
 
-    .home-content h3 {
-        font-size: 2.5rem;
+    .home-content h2 {
+        font-size: 2.4rem;
     }
 
-    .social-media {
+    .hero-actions,
+    .social-media,
+    .social,
+    .tech-stack {
         justify-content: center;
     }
 
     .services-container,
-    .wrapper {
+    .wrapper,
+    .stats {
         grid-template-columns: 1fr;
+    }
+
+    .projects-item {
+        text-align: center;
+    }
+
+    .project-icon {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .input-box {
